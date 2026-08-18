@@ -39,7 +39,7 @@ export function useHeatSimulation() {
   const [liveMode, setLiveMode] = useState(true);
 
   const mode: ModeConfig = useMemo(
-    () => MODES.find((m) => m.id === modeId) ?? MODES[0],
+    () => MODES.find((m) => m.id === modeId) ?? MODES[0]!,
     [modeId],
   );
 
@@ -111,10 +111,10 @@ export function useHeatSimulation() {
     const deltas = [0, -6.9, -9.3];
     const codes = ["C", "A", "B"];
     return mode.zoneNames.map((name, i) => {
-      const temp = +(forecast60 + deltas[i]).toFixed(1);
+      const temp = +(forecast60 + (deltas[i] ?? 0)).toFixed(1);
       return {
-        id: codes[i],
-        code: `Zone ${codes[i]}`,
+        id: codes[i] ?? String(i),
+        code: `Zone ${codes[i] ?? i}`,
         name,
         temp,
         risk: i === 0 ? risk : riskFromTemp(temp, Math.max(0, rate - i)),

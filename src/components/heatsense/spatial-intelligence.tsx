@@ -110,7 +110,7 @@ export function SpatialIntelligence({ sim }: { sim: HeatSimulation }) {
                 <span className="text-base text-muted-foreground">°C</span>
                 {i > 0 && (
                   <span className="ml-2 text-xs font-normal text-risk-low">
-                    {(z.temp - sim.zones[0].temp).toFixed(1)}°C cooler
+                    {(z.temp - (sim.zones[0]?.temp ?? z.temp)).toFixed(1)}°C cooler
                   </span>
                 )}
               </p>

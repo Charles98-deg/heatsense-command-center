@@ -37,7 +37,7 @@ export function SimulationBar({ sim }: { sim: HeatSimulation }) {
             min={START_HOUR}
             max={END_HOUR}
             step={0.25}
-            onValueChange={([v]) => sim.setHour(v)}
+            onValueChange={([v]) => sim.setHour(v ?? sim.hour)}
             aria-label="Simulation time"
           />
           <span className="label-caps">18:00</span>
