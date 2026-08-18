@@ -7,7 +7,7 @@ import {
   YAxis,
 } from "recharts";
 import { ArrowUpRight, Gauge, ShieldAlert, Thermometer, TrendingUp } from "lucide-react";
-import { RISK_ORDER, RISK_STYLES, type RiskLevel } from "@/lib/heatsense";
+import { RISK_ORDER, RISK_STYLES } from "@/lib/heatsense";
 import { RiskBadge } from "./risk-badge";
 import { cn } from "@/lib/utils";
 import type { HeatSimulation } from "@/hooks/use-heat-simulation";
