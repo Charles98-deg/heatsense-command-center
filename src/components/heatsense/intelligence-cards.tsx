@@ -88,9 +88,9 @@ export function IntelligenceCards({ sim }: { sim: HeatSimulation }) {
             forecast in <span className="text-foreground">60 mins</span> • 3-hour outlook
           </p>
         </div>
-        <div className="h-32 w-full">
+        <div className="h-40 w-full flex-1">
           <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={sim.forecastSeries} margin={{ top: 6, right: 4, bottom: 0, left: -22 }}>
+            <AreaChart data={sim.forecastSeries} margin={{ top: 6, right: 8, bottom: 0, left: 0 }}>
               <defs>
                 <linearGradient id="heatFill" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="var(--risk-critical)" stopOpacity={0.55} />
@@ -109,7 +109,8 @@ export function IntelligenceCards({ sim }: { sim: HeatSimulation }) {
                 tickLine={false}
                 axisLine={false}
                 domain={["dataMin - 1", "dataMax + 1"]}
-                width={44}
+                width={40}
+                tickFormatter={(v: number) => `${Math.round(v)}°`}
               />
               <Tooltip
                 contentStyle={{
