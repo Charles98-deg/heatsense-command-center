@@ -102,7 +102,7 @@ export function IntelligenceCards({ sim }: { sim: HeatSimulation }) {
                 tick={{ fontSize: 10, fill: "var(--muted-foreground)" }}
                 tickLine={false}
                 axisLine={false}
-                interval={2}
+                interval={3}
               />
               <YAxis
                 tick={{ fontSize: 10, fill: "var(--muted-foreground)" }}
